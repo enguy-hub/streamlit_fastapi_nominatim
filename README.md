@@ -81,7 +81,7 @@ uvicorn api.main:app --reload
 The server will be available at <http://127.0.0.1:8000/>
 
 
-### 5. Run Streamlit app
+### 4. Run Streamlit app
 
 ---
 
