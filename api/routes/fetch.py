@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from models.nominatim import RequestNominatimSearchURL
+from models.nominatim_models import RequestNominatimSearchURL
 from services.nominatim_services import create_nominatim_search_url
 
 
