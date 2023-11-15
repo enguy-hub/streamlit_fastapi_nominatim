@@ -1,4 +1,4 @@
-# Map App with Streamlit and FastAPI - and Nominatim API
+# Streamlit and FastAPI Demo Map - with Nominatim API
 
 This project demonstrates the integration of a FastAPI backend with a Streamlit frontend, designed to visualize country boundaries using the OSM boundary dataset accessed through the Nominatim API. Follow the setup guide below to try it out. Enjoy !!!
 
