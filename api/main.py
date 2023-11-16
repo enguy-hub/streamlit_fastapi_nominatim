@@ -7,7 +7,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
-from api.routes import fetch
+from api.routes import create
 
 log = logging.getLogger("uvicorn")
 
@@ -88,7 +88,7 @@ def configure_api_routes(app: FastAPI):
             The application that needs to be configured
     """
 
-    app.include_router(fetch.router, tags=["fetch"])
+    app.include_router(create.router, tags=["create"])
 
 
 app = create_application()
@@ -96,7 +96,7 @@ app = create_application()
 
 @app.get("/")
 async def root():
-    return {"message: " "Welcome to Streamlit-FastAPI with Nominatim API"}
+    return {"message: " "Welcome to Streamlit-FastAPI Endpoints"}
 
 
 def main():
