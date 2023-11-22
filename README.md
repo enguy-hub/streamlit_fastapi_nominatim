@@ -2,6 +2,8 @@
 
 A demo web-map application designed to visualize country boundaries based on user selection. 
 
+![demo](src/demo_nominatim.gif)
+
 This project uses FastAPI backend with a Streamlit Folium frontend, and the OSM boundary dataset accessed through the [Nominatim Search API](https://nominatim.org/release-docs/latest/api/Search/). Follow the setup guide below to try it out. Enjoy !!!
 
 

@@ -34,32 +34,38 @@ def osm_boundary_stmap():
         )
 
     if st.session_state.stage >= 1:
-        st.write(f'You entered: "{entered_country_code}"')
 
-        inputs = {"country_code": entered_country_code}
-        response_url = requests.post(
-            "http://localhost:8000/create/nominatim_search_url",
-            data=json.dumps(inputs),
-        ).json()
-        print(f"Nominatim Search URL: {response_url}")
+        if entered_country_code is not None:
 
-        sttext_url = st.text(f"The Nominatim Search URL will be used to query OSM Country Boundary is: \n{response_url}")
+            st.write(f'You entered: "{entered_country_code}"')
 
-        if sttext_url is None:
-            set_state(1)
-        else:
-            st.button("Fetch OSM Boundary", on_click=set_state, args=[2])
+            inputs = {"country_code": entered_country_code}
+            response_url = requests.post(
+                "http://localhost:8000/create/nominatim_search_url",
+                data=json.dumps(inputs),
+            ).json()
+            print(f"Nominatim Search URL: {response_url}")
+
+            sttext_url = st.text(f"The Nominatim Search URL will be used to query OSM Country Boundary is: \n{response_url}")
+
+            if sttext_url is None:
+                set_state(1)
+            else:
+                st.button("Fetch OSM Boundary", on_click=set_state, args=[2])
 
     if st.session_state.stage >= 2:
-        st.write(f'Displaying the OSM boundary for "{entered_country_code}" ...')
-        country_gdf, country_centroid = convert_nominatim_search_url_to_gdf(response_url)
-        display_osm_boundary(country_gdf, country_centroid)
 
-        st.button("Start Over", on_click=set_state, args=[0])
+        if sttext_url is not None:
+            
+            st.write(f'Displaying the OSM boundary for "{entered_country_code}" ...')
+            country_gdf, country_centroid = convert_nominatim_search_url_to_gdf(response_url)
+            display_osm_boundary(country_gdf, country_centroid)
+
+            st.button("Start Over", on_click=set_state, args=[0])
 
 
 def main():
-    APP_TITLE = "FastAPI & Streamlit - Map App"
+    APP_TITLE = "FastAPI & Streamlit - Demo Map"
 
     # Title
     st.title(APP_TITLE)

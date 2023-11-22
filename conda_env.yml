@@ -1,4 +1,4 @@
-name: stmap_fapi
+name: stfapi
 channels:
   - defaults
 dependencies:
