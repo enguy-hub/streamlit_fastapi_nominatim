@@ -1,6 +1,8 @@
-# Streamlit Folium Map and FastAPI - with Nominatim API
+# Streamlit Folium and FastAPI - with Nominatim API
 
-This project demonstrates the integration of a FastAPI backend with a Streamlit Folium frontend, designed to visualize country boundaries using the OSM boundary dataset accessed through the [Nominatim Search API](https://nominatim.org/release-docs/latest/api/Search/). 
+## A demo web-map application designed to visualize country boundaries based on user selection. 
+
+This project uses FastAPI backend with a Streamlit Folium frontend, and the OSM boundary dataset accessed through the [Nominatim Search API](https://nominatim.org/release-docs/latest/api/Search/). 
 
 Follow the setup guide below to try it out. Enjoy !!!
 
@@ -92,6 +94,11 @@ streamlit run stfapi_nominatim.py
 ```
 
 The app will be available at <http://localhost:8501>
+
+
+# Enjoy the app !!
+
+---
 
 
 ### Deactivate Python intepreter environment (conda or venv)
